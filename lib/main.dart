@@ -4,14 +4,31 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+// letak StatefulWidget
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
+
+// State utk re-render UI
+class MyAppState extends State<MyApp> {
+  // inital question index
+  var questionIndex = 0;
+  // react button function
+  void answerQuestion() {
+    // tambah setState, letak counter dalam state
+    setState(() {
+      questionIndex++;
+    });
+
+    print(questionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
-    // react button function
-    void answerQuestion() {
-      print('Answer chosen!');
-    }
-
     // variable untuk simpan soalan
     var questions = [
       'What\'s your favourite color?',
@@ -29,7 +46,7 @@ class MyApp extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             // tambah text pada body
-            Text('The question!'),
+            Text(questions[questionIndex]),
 
             // tambah text pada button
             ElevatedButton(
