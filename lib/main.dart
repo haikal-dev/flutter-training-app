@@ -47,8 +47,10 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            // tambah text pada body
-            Text(questions[_questionIndex]),
+            // tambah soalan pada body
+            Question(
+              questions[_questionIndex],
+            ),
 
             // tambah text pada button
             ElevatedButton(
