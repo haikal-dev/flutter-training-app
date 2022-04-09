@@ -9,22 +9,22 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
 // State utk re-render UI
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
   // inital question index
-  var questionIndex = 0;
+  var _questionIndex = 0;
   // react button function
   void answerQuestion() {
     // tambah setState, letak counter dalam state
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
 
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   @override
@@ -46,7 +46,7 @@ class MyAppState extends State<MyApp> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             // tambah text pada body
-            Text(questions[questionIndex]),
+            Text(questions[_questionIndex]),
 
             // tambah text pada button
             ElevatedButton(
