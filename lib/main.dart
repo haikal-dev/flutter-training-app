@@ -7,6 +7,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // react button function
+    void answerQuestion() {
+      print('Answer chosen!');
+    }
+
     // variable untuk simpan soalan
     var questions = [
       'What\'s your favourite color?',
@@ -24,24 +29,24 @@ class MyApp extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             // tambah text pada body
-            const Text('The question!'),
+            Text('The question!'),
 
             // tambah text pada button
-            const ElevatedButton(
+            ElevatedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
 
             // tambah text pada button
-            const ElevatedButton(
+            ElevatedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
 
             // tambah text pada button
-            const ElevatedButton(
+            ElevatedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
           ],
         ),
